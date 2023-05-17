@@ -1,107 +1,64 @@
-# :wave: The Basics of GitHub 
+Simple Chat Server and Chat Application using GTK and Socket Programming
 
-## 🤓 Course overview and learning outcomes 
-
-The goal of this course is to give you a brief introduction to GitHub. We’ll also provide you with materials for further learning and a few ideas to get you started on our platform. 🚀
-
-## :octocat: Git and GitHub
-
-Git is a **distributed Version Control System (VCS)**, which means it is a useful tool for easily tracking changes to your code, collaborating, and sharing. With Git you can track the changes you make to your project so you always have a record of what you’ve worked on and can easily revert back to an older version if need be. It also makes working with others easier—groups of people can work together on the same project and merge their changes into one final source!
-
-GitHub is a way to use the same power of Git all online with an easy-to-use interface. It’s used across the software world and beyond to collaborate and maintain the history of projects.
-
-GitHub is home to some of the most advanced technologies in the world. Whether you're visualizing data or building a new game, there's a whole community and set of tools on GitHub that can get you to the next step. This course starts with the basics of GitHub, but we'll dig into the rest later.
-
-## :octocat: Understanding the GitHub flow 
-
-The GitHub flow is a lightweight workflow that allows you to experiment and collaborate on your projects easily, without the risk of losing your previous work.
-
-### Repositories
-
-A repository is where your project work happens--think of it as your project folder. It contains all of your project’s files and revision history.  You can work within a repository alone or invite others to collaborate with you on those files.
-
-### Cloning 
-
-When a repository is created with GitHub, it’s stored remotely in the ☁️. You can clone a repository to create a local copy on your computer and then use Git to sync the two. This makes it easier to fix issues, add or remove files, and push larger commits. You can also use the editing tool of your choice as opposed to the GitHub UI. Cloning a repository also pulls down all the repository data that GitHub has at that point in time, including all versions of every file and folder for the project! This can be helpful if you experiment with your project and then realize you liked a previous version more. 
-To learn more about cloning, read ["Cloning a Repository"](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). 
-
-### Committing and pushing
-**Committing** and **pushing** are how you can add the changes you made on your local machine to the remote repository in GitHub. That way your instructor and/or teammates can see your latest work when you’re ready to share it. You can make a commit when you have made changes to your project that you want to “checkpoint.” You can also add a helpful **commit message** to remind yourself or your teammates what work you did (e.g. “Added a README with information about our project”).
-
-Once you have a commit or multiple commits that you’re ready to add to your repository, you can use the push command to add those changes to your remote repository. Committing and pushing may feel new at first, but we promise you’ll get used to it 🙂
-
-## 💻 GitHub terms to know 
-
-### Repositories 
-We mentioned repositories already, they are where your project work happens, but let’s talk a bit more about the details of them! As you work more on GitHub you will have many repositories which may feel confusing at first. Fortunately, your ["GitHub dashboard"](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/about-your-personal-dashboard) helps to easily navigate to your repositories and see useful information about them. Make sure you’re logged in to see it!
-
-Repositories also contain **README**s. You can add a README file to your repository to tell other people why your project is useful, what they can do with your project, and how they can use it. We are using this README to communicate how to learn Git and GitHub with you. 😄 
-To learn more about repositories read ["Creating, Cloning, and Archiving Repositories](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories) and ["About README's"](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes). 
-
-### Branches
-You can use branches on GitHub to isolate work that you do not want merged into your final project just yet. Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a contained area of your repository. Typically, you might create a new branch from the default branch of your repository—main. This makes a new working copy of your repository for you to experiment with. Once your new changes have been reviewed by a teammate, or you are satisfied with them, you can merge your changes into the default branch of your repository.
-To learn more about branching, read ["About Branches"](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches).
-
-### Forks
-A fork is another way to copy a repository, but is usually used when you want to contribute to someone else’s project. Forking a repository allows you to freely experiment with changes without affecting the original project and is very popular when contributing to open source software projects!
-To learn more about forking, read ["Fork a repo"](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
-
-### Pull requests
-When working with branches, you can use a pull request to tell others about the changes you want to make and ask for their feedback. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add more changes if need be. You can add specific people as reviewers of your pull request which shows you want their feedback on your changes! Once a pull request is ready-to-go, it can be merged into your main branch.
-To learn more about pull requests, read ["About Pull Requests"](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests). 
+Introduction
+This project report presents the implementation of a simple chat server and a chat application using socket programming in C and GTK library for the graphical user interface (GUI). The chat server allows multiple clients to connect and communicate with each other in real-time, while the chat application provides a user-friendly interface for users to connect to the server and exchange messages. The project involved the use of socket programming to establish and maintain communication between clients and the server. The application also makes use of a simple GUI interface to display messages and user information.
 
 
-### Issues
-Issues are a way to track enhancements, tasks, or bugs for your work on GitHub. Issues are a great way to keep track of all the tasks you want to work on for your project and let others know what you plan to work on. You can also use issues to tell a favorite open source project about a bug you found or a feature you think would be great to add!
+Methodology
+To create this chat application, the following steps were taken:
+User Interface: A simple GUI interface was created using the GTK library for the chat application, which included a text box for typing messages and a chat history area where previous messages were displayed. The GTK library was used because it provides a simple and easy-to-use interface for creating GUI applications in C.
 
-For larger projects, you can keep track of many issues on a project board. GitHub Projects help you organize and prioritize your work and you can read more about them [in this "About Project boards document](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards). You likely won’t need a project board for your assignments, but once you move on to even bigger projects, they’re a great way to organize your team’s work!
-You can also link together pull requests and issues to show that a fix is in progress and to automatically close the issue when someone merges the pull request.
-To learn more about issues and linking them to your pull requests, read ["About Issues"](https://docs.github.com/en/github/managing-your-work-on-github/about-issues). 
+Server: A program was developed that listens for incoming connections and routes messages between clients. The server program used socket programming to accept incoming connections from clients and establish a socket connection with them.
+Clients: A program was developed that connects to the server using a socket connection. The client program was responsible for sending and receiving messages over the socket connection, and displaying the chat history and user list in the GUI.
+Real-time messaging: Real-time messaging was implemented so that clients could see messages from other users as soon as they were sent. To achieve this, a loop was created that continuously listened for incoming messages from the socket connection.
+Security: Security measures were implemented to prevent unauthorized access or eavesdropping on the chat messages. This involved encrypting the messages, using secure socket connections, and implementing other security measures.
 
-### Your user profile
 
-Your profile page tells people the story of your work through the repositories you're interested in, the contributions you've made, and the conversations you've had. You can also give the world a unique view into who you are with your profile README. You can use your profile to let future employers know all about you! 
-To learn more about your user profile and adding and updating your profile README, read ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme). 
+The project was implemented in C programming language on the Linux operating system. The server and clients communicated using socket connections and IPC mechanisms were used to establish and maintain communication between the server and clients. The GUI was created using GTK library, which provided a simple and easy-to-use interface for creating GUI applications in C. The project was tested on a local network to ensure that it was functioning as expected and all features were working correctly.
 
-### Using markdown on GitHub 
+Results
+The chat application was successfully developed, and features worked as expected. The GUI interface was user-friendly and easy to navigate, and the chat history area displayed messages in real-time. Users were able to connect to the server and communicate with each other using the chat application. The server was able to handle multiple clients simultaneously, and messages were routed between clients efficiently.
 
-You might have noticed already, but you can add some fun styling to your issues, pull requests, and files. ["Markdown"](https://guides.github.com/features/mastering-markdown/) is an easy way to style your issues, pull requests, and files with some simple syntax. This can be helpful to organize your information and make it easier for others to read. You can also drop in gifs and images to help convey your point!
-To learn more about using GitHub’s flavor of markdown, read ["Basic Writing and Formatting Syntax"](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax). 
+Discussion
+The chat application developed in this project has several potential applications in the real world. It can be used as a communication tool for businesses to enable employees to communicate with each other in real-time. It can also be used as a social networking tool to allow people to connect with each other and communicate on various topics. However, there are some limitations to this chat application. For example, it only works over a local network, and users must be connected to the same network to use the application.
 
-### Engaging with the GitHub community
+Future Work
+In future work, the chat application can be improved by adding more features and functionality to make it more useful and versatile. Some of the potential improvements include:
+Support for multiple chat rooms: Currently, the chat application only supports a single chat room. Adding support for multiple chat rooms would allow users to create and join different chat rooms based on their interests or topics.
+File transfer: Adding the ability to transfer files between users in the chat application would make it more useful for businesses and other organizations.
+Mobile application: Developing a mobile application for the chat application would allow users to connect and communicate with each other on-the-go.
+Voice and video chat: Adding support for voice and video chat would make the chat application more versatile and useful for users who prefer real-time communication.
+Integration with social media: Integrating the chat application with social media platforms such as Facebook or Twitter would allow users to connect with each other across different networks and expand their social circles.
+User authentication: Implementing user authentication mechanisms would allow only authorized users to access the chat application and prevent unauthorized access.
+Improved security measures: Adding more advanced security measures such as two-factor authentication, data encryption, and intrusion detection would make the chat application more secure and protect users' data.
+Overall, the potential for improvement and expansion of the chat application is vast. These improvements would increase the chat application's usefulness, versatility, and user-friendliness, making it a powerful tool for businesses, organizations, and individuals.
 
-The GitHub community is vast. There are many types of people who use GitHub in their day to day—students like you, professional developers, hobbyists working on open source projects, and explorers who are just jumping into the world of software development on their own. There are many ways you can interact with the larger GitHub community, but here are three places where you can start. 
+The development of this chat application using process communication between sockets with a GUI in the C programming language highlights the potential for creating powerful and user-friendly applications using socket programming and inter-process communication mechanisms. The project's success shows how these technologies can be used to create real-time communication tools that are both secure and versatile.
+The project's limitations and potential improvements demonstrate the potential for expanding the chat application's functionality to make it more useful and versatile for businesses, organizations, and individuals. The addition of features such as support for multiple chat rooms, file transfer, and user authentication would make the chat application more secure, user-friendly, and versatile. The integration with social media and the development of a mobile application would also expand its reach and make it accessible to a wider audience.
 
-#### Starring repositories 
+Code Explanation: Simple Chat Server
+The code for the chat server begins by including necessary header files and defining preprocessor directives. It defines a structure called ClientNode to represent a connected client and provides functions for creating a new client node, handling the SIGINT signal for program termination, sending messages to all connected clients, and handling client threads.
 
-If you find a repository interesting or you want to keep track of it, star it! When you star a repository it’s also used as a signal to surface better recommendations on github.com/explore. If you’d like to get back to your starred repositories you can do so via your user profile. 
-To learn  more about starring repositories, read ["Saving Repositories with Stars"](https://docs.github.com/en/github/getting-started-with-github/saving-repositories-with-stars). 
+The main function sets up the server socket, binds it to a port, listens for client connections, and starts the server loop. It also initializes the linked list for clients.
 
-#### Following users 
+Project Features of the Simple Chat Server
 
-You can follow people on GitHub to receive notifications about their activity and discover projects in their communities. When you follow a user, their public GitHub activity will show up on your dashboard so you can see all the cool things they are working on. 
-To learn more about following users, read ["Following People"](https://docs.github.com/en/github/getting-started-with-github/following-people).
+Multiple client support: The server can handle multiple client connections simultaneously using threads.
+Nickname assignment: Clients can choose a nickname that is displayed when they send messages.
+Real-time messaging: Clients can send messages to the server, which are then broadcasted to all other connected clients.
+Join and leave notifications: When a client joins or leaves the chatroom, a notification is sent to all connected clients.
+Code Explanation: Chat Application using GTK and Socket Programming
+The code for the chat application using GTK and socket programming involves the creation of a graphical user interface using the GTK library. It defines global variables for flag control, socket file descriptor, nickname, message entry, and message view. Helper functions are provided for string manipulation and signal handling.
 
-#### Browsing GitHub Explore 
+The code includes functions for socket communication, such as receiving messages from the server and updating the message view, as well as sending user input to the server. Additionally, a callback function is implemented for handling the "Send" button click event in the GUI.
 
-GitHub Explore is a great place to do just that … explore :smile: You can find new projects, events, and developers to interact with.
+The main function initializes the program, registers the signal handler, prompts the user for a nickname, creates a socket, connects to the server, and creates threads for sending and receiving messages. It also initializes the GTK application and runs it. The program continuously checks the flag variable for termination, closes the socket when termination is requested, and exits the program.
 
-You can check out the GitHub Explore website [at github.com/explore](https://github.com/explore). The more you interact with GitHub the more tailored your Explore view will be. 
+Graphical user interface: The application provides a user-friendly GUI built using the GTK library.
+Real-time messaging: Users can send and receive messages in real-time through the application.
+User input handling: User messages are sent to the server for distribution.
+Signal handling: The program gracefully exits when the user presses Ctrl+C.
+Network communication: TCP/IP sockets are used to establish communication between the client and server.
 
-## 📝 Optional next steps 
-
-* Open a pull request and let your teacher know that you’ve finished this course.  
-* Create a new markdown file in this repository. Let them know what you learned and what you are still confused about! Experiment with different styles!
-* Create your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
-* Go to your user dashboard and create a new repository. Experiment with the features within that repository to familiarize yourself with them. 
-* [Let us know what you liked or didn’t like about the content of this course](https://support.github.com/contact/education). What would you like to see more of? What would be interesting or helpful to your learning journey? 
-
-## 📚  Resources 
-* [A short video explaining what GitHub is](https://www.youtube.com/watch?v=w3jLJU7DT5E&feature=youtu.be) 
-* [Git and GitHub learning resources](https://docs.github.com/en/github/getting-started-with-github/git-and-github-learning-resources) 
-* [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-* [How to use GitHub branches](https://www.youtube.com/watch?v=H5GJfcp3p4Q&feature=youtu.be)
-* [Interactive Git training materials](https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class)
-* [GitHub's Learning Lab](https://lab.github.com/)
-* [Education community forum](https://education.github.community/)
-* [GitHub community forum](https://github.community/)
+Conclusion
+The combined project demonstrates the implementation of a simple chat server and a chat application using socket programming in C and the GTK library for the GUI. The chat server enables multiple clients to connect and communicate in real-time, while the chat application provides a user-friendly interface for users to interact with the server. The projects showcase the use of sockets, threading, signal handling, and graphical interface creation, offering a starting point for more advanced chat applications or as a learning resource for socket programming and GTK concepts.
